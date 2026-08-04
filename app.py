@@ -110,7 +110,7 @@ def create_retriever(_vectorstore,k_value):
     return retriever
 
 vectorstore = create_vector_db(chunks,embedding)
-k_slider = st.sidebar("select Top K-Value",min_value = 1,max_value = 10)
+k_slider = st.sidebar.slider("select Top K-Value",min_value = 1,max_value = 10)
 
 
 retriever = create_retriever(vectorstore,k_slider)
